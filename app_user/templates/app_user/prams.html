@@ -1,0 +1,428 @@
+
+{% extends 'app_user/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<div class="container-fluid px-2 px-md-4">
+  <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+    <span class="mask  bg-gradient-primary  opacity-6"></span>
+  </div>
+  <div class="card card-body mx-3 mx-md-4 mt-n6">
+    <div class="row gx-4 mb-2">
+      <div class="col-auto">
+        <div class="avatar avatar-xl position-relative">
+          <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+        </div>
+      </div>
+      <div class="col-auto my-auto">
+        <div class="h-100">
+          <h5 class="mb-1">
+            Calculate Prams
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="row container-fluid">
+
+      <form role="form" method="post">
+        {% csrf_token %}
+
+
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="form-group">
+                <label>Hypertension</label><br />
+               <input type="radio" id="hypertension_yes" name="hypertension" value="yes">
+                <label for="hypertension_yes">yes</label><br>
+                <input type="radio" id="hypertension_no" name="hypertension" value="no">
+                <label for="hypertension_no">no</label><br>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Diabetes pre pregnancy or diagnosed prior to 24 weeks*</label><br />
+               <input type="radio" id="diabetes_yes" name="diabetes" value="yes">
+                <label for="diabetes_yes">yes</label><br>
+                <input type="radio" id="diabetes_no" name="diabetes" value="no">
+                <label for="diabetes_no">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Asthma*</label><br />
+               <input type="radio" id="asthma_yes" name="asthma" value="yes">
+                <label for="asthma_yes">yes</label><br>
+                <input type="radio" id="asthma_no" name="asthma" value="no">
+                <label for="asthma_no">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Seizure Disorder*</label><br />
+               <input type="radio" id="seizure_yes" name="seizure" value="yes">
+                <label for="seizure_yes">yes</label><br>
+                <input type="radio" id="seizure_no" name="seizure" value="no">
+                <label for="seizure_">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Kidney Disease*</label><br />
+               <input type="radio" id="kidneyyes" name="kidney" value="yes">
+                <label for="kidneyyes">yes</label><br>
+                <input type="radio" id="kidneyno" name="kidney" value="no">
+                <label for="kidneyno">no</label><br>
+            </div>
+            
+          </div>
+
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Systemic Lupus Erythematous, Sjogrens Syndrome, or other rheumatologic diseases*</label><br />
+               <input type="radio" id="systemicyes" name="systemic" value="yes">
+                <label for="systemicyes">yes</label><br>
+                <input type="radio" id="systemicno" name="systemic" value="no">
+                <label for="systemicno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>HIV*</label><br />
+               <input type="radio" id="hivyes" name="hiv" value="yes">
+                <label for="hivyes">yes</label><br>
+                <input type="radio" id="hivno" name="hiv" value="no">
+                <label for="hivno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Heart Disease*</label><br />
+               <input type="radio" id="heartyes" name="heart" value="yes">
+                <label for="heartyes">yes</label><br>
+                <input type="radio" id="heartno" name="heart" value="no">
+                <label for="heartno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Cancer*</label><br />
+               <input type="radio" id="canceryes" name="cancer" value="yes">
+                <label for="canceryes">yes</label><br>
+                <input type="radio" id="cancerno" name="cancer" value="no">
+                <label for="cancerno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Brain surgery, malformation, aneurysm, or tumor*</label><br />
+               <input type="radio" id="brainyes" name="brain" value="yes">
+                <label for="brainyes">yes</label><br>
+                <input type="radio" id="brainno" name="brain" value="no">
+                <label for="brainno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Hypothyroidism*</label><br />
+               <input type="radio" id="hypothyroidismyes" name="hypothyroidism" value="yes">
+                <label for="hypothyroidismyes">yes</label><br>
+                <input type="radio" id="hypothyroidismno" name="hypothyroidism" value="no">
+                <label for="hypothyroidismno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Hyperthyroidism*</label><br />
+               <input type="radio" id="hyperthyroidismyes" name="hyperthyroidism" value="yes">
+                <label for="hyperthyroidismyes">yes</label><br>
+                <input type="radio" id="hyperthyroidismno" name="hyperthyroidism" value="no">
+                <label for="hyperthyroidismno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Clotting problem such as DVT, Pulmonary embolus, TIA or stroke*</label><br />
+               <input type="radio" id="clottingyes" name="clotting" value="yes">
+                <label for="clottingyes">yes</label><br>
+                <input type="radio" id="clottingno" name="clotting" value="no">
+                <label for="clottingno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Preeclampsia prior*</label><br />
+               <input type="radio" id="preeclampsia_prioryes" name="preeclampsia_prior" value="yes">
+                <label for="preeclampsia_prioryes">yes</label><br>
+                <input type="radio" id="preeclampsia_priorno" name="preeclampsia_prior" value="no">
+                <label for="preeclampsia_priorno">no</label><br>
+            </div>
+            
+          </div>
+
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Preeclampsia after*</label><br />
+               <input type="radio" id="preeclampsia_afteryes" name="preeclampsia_after" value="yes">
+                <label for="preeclampsia_afteryes">yes</label><br>
+                <input type="radio" id="preeclampsia_afterno" name="preeclampsia_after" value="no">
+                <label for="preeclampsia_afterno">no</label><br>
+            </div>
+            
+          </div>
+
+         
+         <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Preterm delivery 34-37 weeks</label><br />
+               <input type="radio" id="preterm_deliveryyes" name="preterm_delivery" value="yes">
+                <label for="preterm_deliveryyes">yes</label><br>
+                <input type="radio" id="preterm_deliveryno" name="preterm_delivery" value="no">
+                <label for="preterm_deliveryno">no</label><br>
+            </div>
+            
+          </div>
+
+
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Preterm delivery prior to 34 weeks</label><br />
+               <input type="radio" id="preterm_delivery_prioryes" name="preterm_delivery_prior" value="yes">
+                <label for="preterm_delivery_prioryes">yes</label><br>
+                <input type="radio" id="preterm_delivery_priorno" name="preterm_delivery_prior" value="no">
+                <label for="preterm_delivery_priorno">no</label><br>
+            </div>
+            
+          </div>
+
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Rupture of membranes prior to 34 weeks*</label><br />
+               <input type="radio" id="ruptureyes" name="rupture" value="yes">
+                <label for="ruptureyes">yes</label><br>
+                <input type="radio" id="ruptureno" name="rupture" value="no">
+                <label for="ruptureno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Cerclage*</label><br />
+               <input type="radio" id="cerclageyes" name="cerclage" value="yes">
+                <label for="cerclageyes">yes</label><br>
+                <input type="radio" id="cerclageno" name="cerclage" value="no">
+                <label for="cerclageno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>History of uterine anomaly*</label><br />
+               <input type="radio" id="uterineyes" name="uterine" value="yes">
+                <label for="uterineyes">yes</label><br>
+                <input type="radio" id="uterineno" name="uterine" value="no">
+                <label for="uterineno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Stillbirth after 14 weeks*</label><br />
+               <input type="radio" id="stillbirthyes" name="stillbirth" value="yes">
+                <label for="stillbirthyes">yes</label><br>
+                <input type="radio" id="stillbirthno" name="stillbirth" value="no">
+                <label for="stillbirthno">no</label><br>
+            </div>
+            
+          </div>
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Intrauterine growth restriction (IUGR)*</label><br />
+               <input type="radio" id="intrauterineyes" name="intrauterine" value="yes">
+                <label for="intrauterineyes">yes</label><br>
+                <input type="radio" id="intrauterineno" name="intrauterine" value="no">
+                <label for="intrauterineno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>2 or more consecutive first trimester losses*</label><br />
+               <input type="radio" id="trimesteryes" name="trimester" value="yes">
+                <label for="trimesteryes">yes</label><br>
+                <input type="radio" id="trimesterno" name="trimester" value="no">
+                <label for="trimesterno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Body Mass Index</label><br />
+               <input type="radio" id="bmiyes" name="bmi" value="yes">
+                <label for="bmiyes">yes</label><br>
+                <input type="radio" id="bmino" name="bmi" value="no">
+                <label for="bmino">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Oligohydramnios- low fluid*</label><br />
+               <input type="radio" id="oligohydramniosyes" name="oligohydramnios" value="yes">
+                <label for="oligohydramniosyes">yes</label><br>
+                <input type="radio" id="oligohydramniosno" name="oligohydramnios" value="no">
+                <label for="oligohydramniosno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Polyhydramnios - excessive fluid</label><br />
+               <input type="radio" id="polyhydramniosyes" name="polyhydramnios" value="yes">
+                <label for="polyhydramniosyes">yes</label><br>
+                <input type="radio" id="polyhydramniosno" name="polyhydramnios" value="no">
+                <label for="polyhydramniosno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>IUGR</label><br />
+               <input type="radio" id="iugryes" name="iugr" value="yes">
+                <label for="iugryes">yes</label><br>
+                <input type="radio" id="iugrno" name="iugr" value="no">
+                <label for="iugrno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Fetal anomaly detected on ultrasound</label><br />
+               <input type="radio" id="fetalyes" name="fetal" value="yes">
+                <label for="fetalyes">yes</label><br>
+                <input type="radio" id="fetalno" name="fetal" value="no">
+                <label for="fetalno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>IVF pregnancy</label><br />
+               <input type="radio" id="ivfyes" name="ivf" value="yes">
+                <label for="ivfyes">yes</label><br>
+                <input type="radio" id="ivfno" name="ivf" value="no">
+                <label for="ivfno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>35 years of age or older on due date</label><br />
+               <input type="radio" id="ageyes" name="age" value="yes">
+                <label for="ageyes">yes</label><br>
+                <input type="radio" id="ageno" name="age" value="no">
+                <label for="ageno">no</label><br>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3">
+
+            <div class="form-group">
+                <label>Multiple gestation</label><br />
+               <input type="radio" id="multiple_gestationyes" name="multiple_gestation" value="yes">
+                <label for="multiple_gestationyes">yes</label><br>
+                <input type="radio" id="multiple_gestationno" name="multiple_gestation" value="no">
+                <label for="multiple_gestationno">no</label><br>
+            </div>
+            
+          </div>
+
+        </div>
+
+
+        
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-lg bg-gradient-primary w-100 mt-4 mb-0"><small>Submit</small></button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

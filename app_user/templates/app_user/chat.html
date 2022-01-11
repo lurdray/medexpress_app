@@ -1,0 +1,115 @@
+
+{% extends 'app_user/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<br /><br /><br />
+<div class="container-fluid px-2 px-md-4">
+  <div class="card card-body mx-3 mx-md-4 mt-n6">
+    <div class="row gx-4 mb-2">
+      <div class="col-auto my-auto">
+        <div class="h-100">
+          <h5 class="mb-1">
+            Talk to a Doctor
+          </h5>
+          <p class="mb-0 font-weight-normal text-sm">
+            Find Healthcare providers
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+
+
+    <div class="row">
+      <form class="container-fluid" role="form" method="post">
+
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <select class="form-control" name="location" id="location">
+              {% for item in locations %}
+                <option class="form-control" value="{{ item }}">{{ item }}</option>
+              {% endfor %}
+            </select> 
+          </div>
+
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-lg bg-gradient-primary w-100 mt-4 mb-0"><small>Search</small></button>
+          </div>
+
+        </form>
+
+    </div>
+
+    <br /><br />
+
+    {% if results %}
+
+    <div class="row">
+      <h4>Search Results:</h4>
+    </div>
+    <br /><br />
+
+    <div class="row">
+
+
+      
+
+        {% for item in results %}
+          <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="card z-index-2 ">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+                  <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                    <h6 style="color: white;" class="container-fluid">{{ item.spec }}</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h6 class="mb-0 ">Details:</h6>
+                  <p class="text-sm ">Doctor's Name: {{ item.name }}
+                    <br />
+                  Location: {{ item.location }}
+                    <br />
+                  Contact Doctor:
+                    <br />
+                  {{ item.pub_date }}</p>
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <a href="#">Call</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <a href="#">Chat</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <a href="#">Email</a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+
+      
+      
+
+    </div>
+
+    {% endif %}
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+

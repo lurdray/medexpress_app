@@ -1,0 +1,77 @@
+
+{% extends 'app_user/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<br /><br /><br />
+<div class="container-fluid px-2 px-md-4">
+  <div class="card card-body mx-3 mx-md-4 mt-n6">
+    <div class="row gx-4 mb-2">
+      <div class="col-auto my-auto">
+        <div class="h-100">
+          <h5 class="mb-1">
+            BMI Caculator
+          </h5>
+          <p class="mb-0 font-weight-normal text-sm">
+            Calculate your BMI.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="page-header min-height-300 border-radius-xl mt-4s" style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+          <span class="mask  bg-gradient-primary  opacity-6"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+
+        {% if bmi %}
+
+          <h2>Result:</h2>
+          <p>Your Body Mass Index(BMI) is <b>{{ bmi }}</b>kg/m2</p>
+
+          <a href="{% url 'app_user:bmi' %}">Calculate BMI again!</a>
+
+        {% else %}
+         <form role="form" method="post">
+
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="name">Weight(kilogram)</label>
+            <input class="form-control" id="phone" type="number" name="weight">
+          </div>
+
+          <div class="form-group">
+            <label for="name">Height(meters)</label>
+            <input class="form-control" id="name" type="number" name="height">
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-lg bg-gradient-primary w-100 mt-4 mb-0"><small>Calculate BMI</small></button>
+          </div>
+
+        </form>
+
+        {% endif %}
+
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

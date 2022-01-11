@@ -1,0 +1,69 @@
+
+{% extends 'app_user/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<br /><br /><br />
+<div class="container-fluid px-2 px-md-4">
+  <div class="card card-body mx-3 mx-md-4 mt-n6">
+    <div class="row gx-4 mb-2">
+      <div class="col-auto my-auto">
+        <div class="h-100">
+          <h5 class="mb-1">
+            Expected Delivery Date Caculator
+          </h5>
+          <p class="mb-0 font-weight-normal text-sm">
+            Pregnancy Calendar and Due Date Calculator
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="page-header min-height-300 border-radius-xl mt-4s" style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+          <span class="mask  bg-gradient-primary  opacity-6"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+
+
+          <form role="form">
+            <div class="input-group input-group-outline mb-3s">
+              <h4>Based on Last Period</h4>
+            </div>
+            <div class="input-group input-group-outline mb-3s">
+              <h6>First Day of Last Menstrual Period*</h6>
+            </div>
+            <div class="input-group input-group-outline mb-3">
+              <input name="phone" type="date" class="form-control">
+            </div>
+            <br />
+            <div class="input-group input-group-outline mb-3s">
+              <h6>Average Length of Cycles </h6>
+            </div>
+            <div class="input-group input-group-outline mb-3">
+              <input name="phone" type="text" class="form-control">
+            </div>
+            <br />
+
+
+            <br /><br /><b />
+            <div class="text-center">
+              <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Submit</button>
+            </div>
+          </form>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
